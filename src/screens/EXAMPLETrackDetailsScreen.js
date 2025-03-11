@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet, Alert } from 'react-native';
 
-export default function TrackDetailsScreen({ route }) {
+
+export default function EXAMPLETrackDetailsScreen({ navigation, route }) {
   const { trackId, trackName } = route.params;
   const [trackData, setTrackData] = useState(null);
   const [loading, setLoading] = useState(true);
