@@ -1,20 +1,44 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, ActivityIndicator, StyleSheet, Alert, FlatList } from 'react-native';
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import EasonTrackSearch from './src/screens/EasonTrackSearch';
+import HomeScreen from './src/screens/HomeScreen';
+import StatisticsScreen from './src/screens/StatisticsScreen';
+import JournalCalendarScreen from './src/screens/JournalCalendarScreen';
+
+import { useFonts } from 'expo-font';
+import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
+import { Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+import { Quicksand_700Bold } from '@expo-google-fonts/quicksand';
+
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    Quicksand_500Medium,
+    Quicksand_600SemiBold,
+    Quicksand_700Bold,
+  });
   
   const Tab = createBottomTabNavigator();
+  
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name="Statistics" component={EasonTrackSearch}/>
-        <Tab.Screen name="Home" component={EasonTrackSearch}/>
-        <Tab.Screen name="Journal Calendar" component={EasonTrackSearch}/>
+      <Tab.Navigator 
+      
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+        }}
+
+        initialRouteName="Home">
+        
+        <Tab.Screen name="Statistics" component={StatisticsScreen}/>
+        <Tab.Screen name="Home" component={HomeScreen}/>
+        <Tab.Screen name="Journal Calendar" component={JournalCalendarScreen}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
