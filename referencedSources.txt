@@ -1,0 +1,22 @@
+HERE ARE ALL THE SOURCES WE USED TO CREATE THIS PROJECT:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://ethercreative.github.io/react-native-shadow-generator/
+-> to help create shadow styling
+
+https://stackoverflow.com/questions/75039757/remove-title-at-the-top-from-bottom-tabs-navigation-react-navigation-native
+https://github.com/react-navigation/react-navigation/issues/4530
+-> to style tab navigation
